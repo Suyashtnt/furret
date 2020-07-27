@@ -2,19 +2,25 @@ package com.tnt_man_inc.furret.furret;// Made with Blockbench 3.5.4
 	// Exported for Minecraft version 1.15
 	// Paste this class into your mod and generate all required imports
 
+
+import com.tnt_man_inc.furret.furret.FurretEntity;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
-
+import net.minecraft.entity.Entity;
 
 public class FurretModel extends EntityModel<FurretEntity> {
-private final ModelPart frontrightleg;
+	private final ModelPart frontrightleg;
 	private final ModelPart frontleftleg;
 	private final ModelPart baccleftleg;
 	private final ModelPart baccrightleg;
 	private final ModelPart body;
 	private final ModelPart head;
+	private final ModelPart main;
+	private final ModelPart ears;
+	private final ModelPart right;
+	private final ModelPart left;
 	private final ModelPart tail;
 public FurretModel() {
 		textureWidth = 32;
@@ -41,8 +47,29 @@ public FurretModel() {
 
 		head = new ModelPart(this);
 		head.setPivot(0.0F, 24.0F, 0.0F);
-		head.setTextureOffset(0, 11).addCuboid(-2.0F, -5.0F, -6.0F, 3.0F, 3.0F, 3.0F, 0.0F, false);
-		head.setTextureOffset(0, 11).addCuboid(-2.0F, -5.0F, -6.0F, 3.0F, 3.0F, 3.0F, 0.0F, false);
+		
+
+		main = new ModelPart(this);
+		main.setPivot(0.0F, 0.0F, 0.0F);
+		head.addChild(main);
+		main.setTextureOffset(0, 11).addCuboid(-2.0F, -5.0F, -6.0F, 3.0F, 3.0F, 3.0F, 0.0F, false);
+
+		ears = new ModelPart(this);
+		ears.setPivot(0.0F, 0.0F, 0.0F);
+		head.addChild(ears);
+		
+
+		right = new ModelPart(this);
+		right.setPivot(0.375F, -4.375F, -5.25F);
+		ears.addChild(right);
+		right.setTextureOffset(0, 0).addCuboid(0.125F, -1.125F, -0.5F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+		right.setTextureOffset(0, 0).addCuboid(0.875F, -1.875F, -0.5F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+
+		left = new ModelPart(this);
+		left.setPivot(-1.375F, -4.375F, -5.25F);
+		ears.addChild(left);
+		left.setTextureOffset(0, 0).addCuboid(-1.125F, -1.125F, -0.5F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+		left.setTextureOffset(0, 0).addCuboid(-1.875F, -1.875F, -0.5F, 1.0F, 1.0F, 1.0F, 0.0F, false);
 
 		tail = new ModelPart(this);
 		tail.setPivot(0.0F, 19.5F, 7.0F);
@@ -50,12 +77,14 @@ public FurretModel() {
 		tail.setTextureOffset(16, 0).addCuboid(-2.0F, -1.5353F, -4.8637F, 3.0F, 3.0F, 6.0F, 0.0F, false);
 }
 
-@Override
-public void setAngles(FurretEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch){
-		//previously the render function, render code was moved to a method below
-}
-@Override
+	@Override
+	public void setAngles(FurretEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+
+	}
+
+	@Override
 public void render(MatrixStack matrixStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
+		
 		frontrightleg.render(matrixStack, buffer, packedLight, packedOverlay);
 		frontleftleg.render(matrixStack, buffer, packedLight, packedOverlay);
 		baccleftleg.render(matrixStack, buffer, packedLight, packedOverlay);

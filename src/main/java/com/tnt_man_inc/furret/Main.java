@@ -23,7 +23,7 @@ public class Main implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		FabricDefaultAttributeRegistry.register(FURRET, FurretEntity.createMobAttributes());
+		FabricDefaultAttributeRegistry.register(FURRET, FurretEntity.createFurretAttributes());
 		RegistryEntryAddedCallback.event(Registry.BIOME).register((i, identifier, biome) -> ((BiomeAccessor)biome).callAddSpawn(SpawnGroup.AMBIENT, new Biome.SpawnEntry(FURRET, 13, 1, 3)));
 
 	}
