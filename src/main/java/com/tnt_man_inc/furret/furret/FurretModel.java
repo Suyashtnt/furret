@@ -56,7 +56,6 @@ public void setAngles(FurretEntity entity, float limbSwing, float limbSwingAmoun
 }
 @Override
 public void render(MatrixStack matrixStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
-		
 		frontrightleg.render(matrixStack, buffer, packedLight, packedOverlay);
 		frontleftleg.render(matrixStack, buffer, packedLight, packedOverlay);
 		baccleftleg.render(matrixStack, buffer, packedLight, packedOverlay);
