@@ -2,8 +2,6 @@ package com.tnt_man_inc.furret.furret;// Made with Blockbench 3.5.4
 	// Exported for Minecraft version 1.15
 	// Paste this class into your mod and generate all required imports
 
-
-import com.tnt_man_inc.furret.furret.FurretEntity;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;

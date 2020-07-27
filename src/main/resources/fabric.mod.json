@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "com.tnt_man_inc.furret.Main"
+    ],
+    "client": [
+      "com.tnt_man_inc.furret.Client"
     ]
   },
   "mixins": [],
