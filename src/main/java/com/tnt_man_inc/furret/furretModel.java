@@ -1,10 +1,15 @@
-// Made with Blockbench 3.5.4
+package com.tnt_man_inc.furret;// Made with Blockbench 3.5.4
 	// Exported for Minecraft version 1.15
 	// Paste this class into your mod and generate all required imports
 
-	
 
-	public class furret extends EntityModel<> {
+import net.minecraft.client.model.ModelPart;
+import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.entity.model.EntityModel;
+import net.minecraft.client.util.math.MatrixStack;
+
+
+public class furretModel extends EntityModel<FurretEntity> {
 private final ModelPart frontrightleg;
 	private final ModelPart frontleftleg;
 	private final ModelPart baccleftleg;
@@ -12,7 +17,7 @@ private final ModelPart frontrightleg;
 	private final ModelPart body;
 	private final ModelPart head;
 	private final ModelPart tail;
-public furret() {
+public furretModel() {
 		textureWidth = 32;
 		textureHeight = 32;
 		frontrightleg = new ModelPart(this);
@@ -37,19 +42,21 @@ public furret() {
 
 		head = new ModelPart(this);
 		head.setPivot(0.0F, 24.0F, 0.0F);
-		head.setTextureOffset(0, 11).addCuboid(-2.0F, -7.0F, -6.0F, 3.0F, 3.0F, 3.0F, 0.0F, false);
+		head.setTextureOffset(0, 11).addCuboid(-2.0F, -5.0F, -6.0F, 3.0F, 3.0F, 3.0F, 0.0F, false);
+		head.setTextureOffset(0, 11).addCuboid(-2.0F, -5.0F, -6.0F, 3.0F, 3.0F, 3.0F, 0.0F, false);
 
 		tail = new ModelPart(this);
 		tail.setPivot(0.0F, 19.5F, 7.0F);
 		setRotationAngle(tail, 0.2618F, 0.0F, 0.0F);
 		tail.setTextureOffset(16, 0).addCuboid(-2.0F, -1.5353F, -4.8637F, 3.0F, 3.0F, 6.0F, 0.0F, false);
 }
+
 @Override
-public void setAngles( entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch){
+public void setAngles(FurretEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch){
 		//previously the render function, render code was moved to a method below
 }
 @Override
-public void render(MatrixStack matrixStack, VertexConsumer  buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
+public void render(MatrixStack matrixStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
 		
 		frontrightleg.render(matrixStack, buffer, packedLight, packedOverlay);
 		frontleftleg.render(matrixStack, buffer, packedLight, packedOverlay);
