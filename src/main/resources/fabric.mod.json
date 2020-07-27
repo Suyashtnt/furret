@@ -25,7 +25,9 @@
       "com.tnt_man_inc.furret.Client"
     ]
   },
-  "mixins": [],
+  "mixins": [
+    "furret.mixins.json"
+  ],
 
   "depends": {
     "fabricloader": ">=0.7.4",
