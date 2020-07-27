@@ -1,5 +1,6 @@
 package com.tnt_man_inc.furret;
 
+import com.tnt_man_inc.furret.furret.FurretEntityRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;

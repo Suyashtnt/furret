@@ -1,15 +1,16 @@
-package com.tnt_man_inc.furret;// Made with Blockbench 3.5.4
+package com.tnt_man_inc.furret.furret;// Made with Blockbench 3.5.4
 	// Exported for Minecraft version 1.15
 	// Paste this class into your mod and generate all required imports
 
 
+import com.tnt_man_inc.furret.furret.FurretEntity;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 
 
-public class furretModel extends EntityModel<FurretEntity> {
+public class FurretModel extends EntityModel<FurretEntity> {
 private final ModelPart frontrightleg;
 	private final ModelPart frontleftleg;
 	private final ModelPart baccleftleg;
@@ -17,7 +18,7 @@ private final ModelPart frontrightleg;
 	private final ModelPart body;
 	private final ModelPart head;
 	private final ModelPart tail;
-public furretModel() {
+public FurretModel() {
 		textureWidth = 32;
 		textureHeight = 32;
 		frontrightleg = new ModelPart(this);

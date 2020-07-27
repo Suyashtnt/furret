@@ -1,5 +1,6 @@
 package com.tnt_man_inc.furret;
 
+import com.tnt_man_inc.furret.furret.FurretEntity;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
