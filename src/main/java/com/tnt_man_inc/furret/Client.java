@@ -12,8 +12,6 @@ import static com.tnt_man_inc.furret.Main.FURRET;
 public class Client implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
-		EntityRendererRegistry.INSTANCE.register(FURRET, (dispatcher, context) -> {
-			return new FurretEntityRenderer(dispatcher);
-		});
+		EntityRendererRegistry.INSTANCE.register(FURRET, (dispatcher, context) -> new FurretEntityRenderer(dispatcher));
 	}
 }
